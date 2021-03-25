@@ -97,7 +97,8 @@ let pokemonRepository = (function () {
     let modalContainer = document.querySelector('#modal-container');
     modalContainer.classList.remove('is-visible');
   }
- /*
+ /* When code is uncommented out it breaks the code and no longer shows list of pokemon
+
   window.addEventListener('keydown', (e) =>
     let modalContainer = document.querySelector('#modal-container');
     if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
