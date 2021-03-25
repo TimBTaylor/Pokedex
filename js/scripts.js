@@ -22,7 +22,7 @@ let pokemonRepository = (function () {
     button.addEventListener('click', function(){
       showDetails(pokemon)
     });
-    }
+  }
 
   function loadList() {
     return fetch(apiUrl).then(function (response) {
@@ -56,9 +56,59 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon){
     loadDetails(pokemon).then(function(){
-      console.log(pokemon);
+      let modalContainer = document.querySelector('#modal-container');
+
+      //clear exisiting modal content
+      modalContainer.innerHTML = '';
+
+      let modal = document.createElement('div');
+      modal.classList.add('modal');
+
+      // close button on modal
+      let closeButtonElement = document.createElement('button');
+      closeButtonElement.classList.add('modal-close');
+      closeButtonElement.innerText = 'Close';
+      closeButtonElement.addEventListener('click', hideModal);
+
+      // pokemon name displayed in the modal
+      let pokemonName = document.createElement('h1');
+      pokemonName.innerText = pokemon.name;
+
+      //height of the pokemon displayed in the modal
+      let pokemonHeight = document.createElement('p');
+      pokemonHeight.innerText = `Height: ${pokemon.height} m`;
+
+      // image of pokemon displayed in the modal
+      let pokemonImg = document.createElement('img')
+      pokemonImg.src = pokemon.imageUrl;
+
+      modal.appendChild(closeButtonElement);
+      modal.appendChild(pokemonName);
+      modal.appendChild(pokemonHeight);
+      modal.appendChild(pokemonImg);
+      modalContainer.appendChild(modal);
+
+      modalContainer.classList.add('is-visible');
+
     });
   }
+
+  function hideModal() {
+    modalContainer.classList.remove('is-visible');
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+      hideModal();
+    }
+  });
+
+  /*modalContainer.addEventListener('click', (e) => {
+    let target = e.target;
+    if (target === modalContainer) {
+      hideModal();
+    }
+  }); */
 
   return {
     add: add,
