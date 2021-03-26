@@ -1,7 +1,7 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-
+  let modalContainer = document.querySelector('#modal-container')
   function add(item) {
     pokemonList.push(item)
   }
@@ -97,9 +97,8 @@ let pokemonRepository = (function () {
     let modalContainer = document.querySelector('#modal-container');
     modalContainer.classList.remove('is-visible');
   }
- /* When code is uncommented out it breaks the code and no longer shows list of pokemon
 
-  window.addEventListener('keydown', (e) =>
+  window.addEventListener('keydown', (e) => {
     let modalContainer = document.querySelector('#modal-container');
     if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
       hideModal();
@@ -111,7 +110,7 @@ let pokemonRepository = (function () {
     if (target === modalContainer) {
       hideModal();
     }
-  }); */
+  });
 
   return {
     add: add,
