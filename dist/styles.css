@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --font: 'Lato', sans-serif;
+}
+body {
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+}
+.list-group {
+  text-align: center;
+  margin-top: 20px;
+}
+.list-group-item {
+  margin-bottom: 5px;
+  background-color: #d9534f;
+}
+.list-group-item:hover {
+  background-color: #999090;
+}
+.github-logo {
+  position: absolute;
+  left: 50%;
+  margin-left: -50px !important;
+  display: block;
+}
