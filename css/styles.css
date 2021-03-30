@@ -16,14 +16,9 @@ body {
 
 .list-group {
   text-align: center;
-  width: 500px;
-  margin: 40px auto;
+  margin-top: 20px;
 }
 
 .list-group-item {
   margin-bottom: 5px;
-}
-
-.page-container {
-  margin-top: 60px;
 }
