@@ -11,16 +11,18 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.6;
-  margin-left: 10px;
   text-align: center;
 }
 
 .list-group {
   text-align: center;
-  width: 700px;
+  width: 500px;
   margin: 40px auto;
 }
 
+.list-group-item {
+  margin-bottom: 5px;
+}
 
 .page-container {
   margin-top: 60px;
