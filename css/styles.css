@@ -21,4 +21,16 @@ body {
 
 .list-group-item {
   margin-bottom: 5px;
+  background-color: #d9534f;
+}
+
+.list-group-item:hover {
+  background-color: #999090;
+}
+
+.github-logo {
+  position: absolute;
+  left: 50%;
+  margin-left: -50px !important; /* 50% of your logo width */
+  display: block;
 }

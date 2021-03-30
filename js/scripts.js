@@ -68,6 +68,7 @@ let pokemonRepository = (function() {
         item.imageUrl = details.sprites.front_default;
         item.height = details.height;
         item.types = details.types;
+        item.weight = details.weight;
       })
       .catch(function(e) {
         console.error(e);
@@ -89,10 +90,14 @@ let pokemonRepository = (function() {
       let pokemonHeight = $(
         '<p>' + 'Height: ' + pokemon.height + ' meter(s)' + '</p>'
       );
+      let pokemonWeight = $(
+        '<p>' + 'Weight: ' + pokemon.weight + ' kg(s)' + '</p>'
+      );
 
       modalTitle.append(pokemonName);
       modalBody.append(pokemonImage);
       modalBody.append(pokemonHeight);
+      modalBody.append(pokemonWeight);
     });
   }
 
